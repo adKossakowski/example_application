@@ -19,7 +19,7 @@ public class CarDao {
             String str = "";
             while((str = br.readLine()) != null){
                 String[] line = str.split(",");
-                Car car = new Car(Integer.valueOf(line[0]), line[1], line[2], Long.valueOf(line[3]));
+                Car car = new Car(Integer.valueOf(line[0]), line[1], line[2], line[3]);
                 cars.put(car.getId(), car);
             }
 
@@ -32,7 +32,7 @@ public class CarDao {
     public void createNewList(HashMap<Integer, Car> cars){
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(path))){
             for(Map.Entry<Integer, Car> entry : cars.entrySet()){
-                bw.write(entry.getValue().getId() + "," + entry.getValue().getModel() + "," + entry.getValue().getBrand() + "," + entry.getValue().getMileage() + "\n");
+                bw.write(entry.getValue().getId() + "," + entry.getValue().getNazwa() + "," + entry.getValue().getDataZakupu() + "," + entry.getValue().getKolor() + "\n");
             }
         }catch(Exception e){
             e.printStackTrace();

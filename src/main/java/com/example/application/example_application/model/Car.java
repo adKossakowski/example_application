@@ -8,8 +8,8 @@ import lombok.Data;
 public class Car {
 
     private int id;
-    private String model;
-    private String brand;
-    private long mileage;
+    private String nazwa;
+    private String dataZakupu;
+    private String kolor;
 
 }

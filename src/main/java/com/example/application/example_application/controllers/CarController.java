@@ -15,8 +15,8 @@ public class CarController {
     private CarService carService;
 
     @PostMapping("/create")
-    public void addCar(@RequestParam ("model")String model,  @RequestParam ("brand")String brand, @RequestParam("mileage")long mileage){
-        carService.addCar(model, brand, mileage);
+    public void addCar(@RequestParam ("nazwa")String nazwa,  @RequestParam ("data_zakupu")String data_zakupu, @RequestParam("kolor")String kolor){
+        carService.addCar(nazwa, data_zakupu, kolor);
     }
 
     @GetMapping("/list")

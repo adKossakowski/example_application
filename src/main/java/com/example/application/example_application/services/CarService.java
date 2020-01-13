@@ -19,10 +19,10 @@ public class CarService {
         return cars.get(id);
     }
 
-    public void addCar(String model, String brand, long mileage){
+    public void addCar(String nazwa, String data_zakupu, String kolor){
         HashMap<Integer, Car> cars = carDao.getCarList();
         Integer maxKey = Collections.max(cars.entrySet(), Comparator.comparingInt(p -> p.getValue().getId())).getKey();
-        cars.put(maxKey + 1, new Car(maxKey + 1, model, brand, mileage));
+        cars.put(maxKey + 1, new Car(maxKey + 1, nazwa, data_zakupu, kolor));
         carDao.createNewList(cars);
     }
 
