@@ -30,4 +30,10 @@ public class CarService {
         HashMap<Integer, Car> cars = carDao.getCarList();
         return new ArrayList<Car> (cars.values());
     }
+
+    public void deleteCar(int id){
+        HashMap<Integer, Car> cars = carDao.getCarList();
+        cars.remove(id);
+        carDao.createNewList(cars);
+    }
 }

@@ -28,4 +28,9 @@ public class CarController {
     public Car getCarById(@RequestParam("id")int id){
         return carService.getCarById(id);
     }
+
+    @DeleteMapping("/delete")
+    public void deleteCar(@RequestParam("id")int id){
+        carService.deleteCar(id);
+    }
 }
